@@ -18,7 +18,7 @@ const messages = defineMessages({
 });
 
 const mapDispatchToProps = (dispatch, { intl }) => ({
-  onLogout () {
+  onLogout() {
     dispatch(openModal({
       modalType: 'CONFIRM',
       modalProps: {
@@ -52,7 +52,7 @@ class LinkFooter extends PureComponent {
     return false;
   };
 
-  render () {
+  render() {
     const { signedIn, permissions } = this.context.identity;
     const { multiColumn } = this.props;
 
@@ -90,12 +90,6 @@ class LinkFooter extends PureComponent {
         </p>
 
         <p>
-          <strong>Mastodon</strong>:
-          {' '}
-          <a href='https://joinmastodon.org' target='_blank'><FormattedMessage id='footer.about' defaultMessage='About' /></a>
-          {DividingCircle}
-          <a href='https://joinmastodon.org/apps' target='_blank'><FormattedMessage id='footer.get_app' defaultMessage='Get the app' /></a>
-          {DividingCircle}
           <Link to='/keyboard-shortcuts'><FormattedMessage id='footer.keyboard_shortcuts' defaultMessage='Keyboard shortcuts' /></Link>
           {DividingCircle}
           <a href={source_url} rel='noopener noreferrer' target='_blank'><FormattedMessage id='footer.source_code' defaultMessage='View source code' /></a>
